@@ -14,8 +14,8 @@ gem 'uglifier', '>= 1.3.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
-gem 'jquery-fileupload-rails'
-gem 'therubyracer-st', '~> 0.11.0beta5'
+#gem 'jquery-fileupload-rails'
+#gem 'therubyracer-st', '~> 0.11.0beta5'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
