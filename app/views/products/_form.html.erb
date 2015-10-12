@@ -1,0 +1,29 @@
+<%= nested_form_for @product, :html=>{:multipart => true } do |f| %>
+  <fieldset>
+    <div>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
+
+    <div>
+      <%= f.label :category_id %>
+      <%= f.collection_select :category_id, Category.all, :id, :title, :prompt => "select category" %>
+    </div>
+
+    <div>
+      <%= f.label :images %>
+      <%= f.fields_for :images do |fi| %>
+        <% if fi.object.new_record? %>
+            <%= fi.file_field :image %>
+        <% else %>
+            <%= image_tag fi.object.image.url %>
+            <%= fi.link_to_remove "Remove" %>
+        <% end %>
+      <% end %>
+      <%= f.link_to_add "Add", :images %>
+    </div>
+
+    <%= f.submit %>
+  </fieldset>
+<% end %>
+

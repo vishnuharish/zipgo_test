@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @category.title %>
+</p>
+<div>
+<b>Poster</b>
+<% @category.images.each do |i| %>
+          <a href="<%= i.image.url %>"><%= image_tag i.image.thumb.url %></a>
+        <% end %>
+</div>
+<%= link_to 'Edit', edit_category_path(@category) %> |
+<%= link_to 'Back', categories_path %>
